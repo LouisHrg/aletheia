@@ -1,7 +1,7 @@
-import Axios from 'axios';
+import axios from 'axios';
 
-const instance = Axios.create({
-  baseURL: process.env.BACKEND_PROXY,
+const instance = axios.create({
+  baseURL: process.env.VUE_APP_BACKEND_PROXY,
   timeout: 1000,
 });
 

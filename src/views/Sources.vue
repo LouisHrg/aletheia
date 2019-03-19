@@ -1,24 +1,10 @@
 <template>
-<el-container class="app-container">
-  <el-aside width="200px">
-    <el-menu router=true class="app-container">
-    <el-menu-item route="/"  index="1">Home</el-menu-item>
-    <el-menu-item index="2">Feature 1</el-menu-item>
-    <el-menu-item index="3">Feature 2</el-menu-item>
-    <el-menu-item route="/sources"  index="3-1">Sources</el-menu-item>
-    </el-menu>
-  </el-aside>
-
-  <el-container>
-    <el-header>
-      <el-menu class="el-menu-demo" mode="horizontal">
-        <el-menu-item index="1">Lorem</el-menu-item>
-      </el-menu>
-    </el-header>
-    <el-main>
-      <Home :v-if=result.data msg="Sources" />
+  <div>
+      <Home msg="Sources" />
       <el-table
+        :v-loading="isLoading"
         :data="result.data"
+        empty-text="No data"
         style="width: 100%">
         <el-table-column
           prop="name"
@@ -35,15 +21,13 @@
           label="Edition">
         </el-table-column>
       </el-table>
-
       <el-pagination
+        :v-if=pagination
         layout="prev, pager, next"
-        :total="1000">
+        :total=pagination.lastPage>
       </el-pagination>
-
-    </el-main>
-  </el-container>
-</el-container></template>
+  </div>
+</template>
 
 <style>
   .app-container{
@@ -54,11 +38,13 @@
 <script>
 
 import Home from '@/components/Home.vue';
-import sourceApi from '@/api/sources';
+import axios from 'axios';
 
 export default {
 
-  name: 'home',
+
+  name: 'sources',
+
   components: {
     Home,
   },
@@ -68,21 +54,23 @@ export default {
       result: null,
       errors: [],
       isLoading: false,
+      pagination: {},
     };
   },
 
   methods: {
-    isUp() {
+    fetchSources() {
       this.isLoading = true;
-      return sourceApi.getAll().then((res) => {
+      return axios.get('http://localhost:8080/api/sources').then((res) => {
         this.result = res.data;
+        this.pagination.lastPage = this.result.last_page;
         this.isLoading = false;
       });
     },
   },
 
   created() {
-    this.isUp();
+    this.fetchSources();
   },
 };
 </script>
