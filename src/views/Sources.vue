@@ -54,8 +54,10 @@
 <script>
 
 import Home from '@/components/Home.vue';
+import sourceApi from '@/api/sources';
 
 export default {
+
   name: 'home',
   components: {
     Home,
@@ -72,12 +74,13 @@ export default {
   methods: {
     isUp() {
       this.isLoading = true;
-      return this.axios.get('http://aletheia-back.test/sources').then((response) => {
-        this.result = response.data;
+      return sourceApi.getAll().then((res) => {
+        this.result = res.data;
         this.isLoading = false;
       });
     },
   },
+
   created() {
     this.isUp();
   },
