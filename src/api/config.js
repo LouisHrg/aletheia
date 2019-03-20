@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const { VUE_APP_BACKEND_PROXY } = process.env;
+
 const instance = axios.create({
-  baseURL: process.env.VUE_APP_BACKEND_PROXY,
+  baseURL: VUE_APP_BACKEND_PROXY,
   timeout: 1000,
 });
 

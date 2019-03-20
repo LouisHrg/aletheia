@@ -3,9 +3,21 @@
   <el-container class="app-container">
   <el-aside width="200px">
     <el-menu :router=true class="app-container">
-    <el-menu-item route="/"  index="1"><HomeIcon :size="48"/> Home</el-menu-item>
-    <el-menu-item route="/search" index="2"><SearchIcon :size="48"/> Search</el-menu-item>
-    <el-menu-item route="/sources"  index="3-1"><SourceIcon :size="48"/> Sources</el-menu-item>
+    <div class="brand">
+      <p> ALETHEIA </p>
+    </div>
+    <el-menu-item route="/"  index="1">
+      <HomeIcon decorative :size="48"/> Home
+    </el-menu-item>
+    <el-menu-item route="/search" index="2">
+      <SearchIcon decorative :size="48"/> Search
+    </el-menu-item>
+    <el-menu-item route="/sources"  index="3-1">
+      <SourceIcon decorative :size="48"/> Sources
+    </el-menu-item>
+    <el-menu-item route="/sources/data"  index="3-1">
+      <ChartIcon decorative :size="48"/> Sources Data
+    </el-menu-item>
     </el-menu>
   </el-aside>
     <el-container>
@@ -40,6 +52,13 @@
     }
   }
 }
+.brand p{
+  font-weight: bold;
+  position: relative;
+}
+.logo{
+  width: 80px;
+}
 </style>
 
 <script type="text/javascript">
@@ -47,12 +66,14 @@
 import HomeIcon from 'vue-material-design-icons/Home.vue';
 import SourceIcon from 'vue-material-design-icons/AccessPoint.vue';
 import SearchIcon from 'vue-material-design-icons/Magnify.vue';
+import ChartIcon from 'vue-material-design-icons/ChartDonut.vue';
 
 export default {
   components: {
     HomeIcon,
     SourceIcon,
     SearchIcon,
+    ChartIcon,
   },
 };
 
