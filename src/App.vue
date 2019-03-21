@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-  <el-container class="app-container">
+  <div id="app" >
+  <el-container v-if=isApp class="app-container">
   <el-aside width="200px">
     <el-menu :router=true class="app-container">
     <div class="brand">
@@ -30,14 +30,22 @@
         </el-menu>
       </el-header>
       <el-main>
-        <router-view/>
+        <router-view :layout=setLayout />
+        <p class="alpha-label">ALPHA</p>
       </el-main>
     </el-container>
   </el-container>
+  <div v-if=!isApp class="app-container">
+    <router-view />
+  </div>
   </div>
 </template>
 
 <style lang="scss">
+html {
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -61,6 +69,13 @@
 }
 .logo{
   width: 100px;
+
+}
+.alpha-label{
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  color: #b7b7b7;
 }
 </style>
 
@@ -77,6 +92,18 @@ export default {
     SourceIcon,
     SearchIcon,
     ChartIcon,
+  },
+
+  data() {
+    return {
+      isApp: true,
+    };
+  },
+
+  methods: {
+    setLayout(toggle) {
+      this.isApp = toggle;
+    },
   },
 };
 

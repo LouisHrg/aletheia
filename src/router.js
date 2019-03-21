@@ -6,6 +6,7 @@ import SourcesGraph from './views/SourcesGraph.vue';
 import Search from './views/Search.vue';
 import SearchUrl from './views/SearchUrl.vue';
 import PageNotFound from './views/PageNotFound.vue';
+import OnePage from './views/OnePage.vue';
 
 Vue.use(Router);
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/search/url',
       name: 'search-url',
       component: SearchUrl,
+    },
+    {
+      path: '/about',
+      name: 'aletheia',
+      component: OnePage,
     },
     { path: '*', component: PageNotFound },
   ],

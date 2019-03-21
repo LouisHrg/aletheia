@@ -1,7 +1,7 @@
 <template>
 <div>
   <h1>Search a word in our database</h1>
-  <el-form ref="form" v-loading="isLoading">
+  <el-form ref="form" v-loading=isLoading>
       <p> Choose a date range </p>
       <el-select v-model="form.range" placeholder="Select" class="let-me-breath">
         <el-option
@@ -17,7 +17,7 @@
       v-model="form.research"
       clearable>
       </el-input>
-      <el-button @click=fetchResults($event)> Search </el-button>
+      <el-button @click=fetchResults()> Search </el-button>
   </el-form>
   <img  class="mt-50" v-if=!result src="../../public/url.png">
 </div>
@@ -33,6 +33,8 @@
 </style>
 
 <script>
+
+import axios from 'axios';
 
 export default {
   name: 'search',
@@ -64,10 +66,14 @@ export default {
   methods: {
     fetchResults() {
       if (this.form.research.length > 0 && this.form.range.length > 0) {
-        // Success
-      } else {
-        this.$message.error('Please fill all the required inputs.');
+        this.isLoading = true;
+        return axios.get(`http://localhost:8080/api/articles/query/${this.form.research}/${this.form.range}`).then((res) => {
+          this.result = res.data;
+          this.isLoading = false;
+        });
       }
+      this.$message.error('Please fill all the required inputs.');
+      return false;
     },
   },
 };

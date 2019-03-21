@@ -11,6 +11,7 @@
       </el-input>
       <el-button class="let-me-breath" @click=submitForm()> Search </el-button>
   </el-form>
+  <transition name="el-fade-in-linear">
   <el-card v-if=result class="box-card">
       <h3>Results</h3>
       <el-row type="flex" class="row-bg" justify="center" :gutter="20">
@@ -35,7 +36,12 @@
             </ApexChart>
           </el-col>
         </el-row>
+        <p style="float:right">
+        The data presented here are experimental.
+        Thanks for taking it into account.
+      </p>
   </el-card>
+  </transition>
   <img class="mt-50" v-if=!result src="../../public/url.png">
 </div>
 </template>
