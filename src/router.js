@@ -4,6 +4,8 @@ import Home from './views/Home.vue';
 import Sources from './views/Sources.vue';
 import SourcesGraph from './views/SourcesGraph.vue';
 import Search from './views/Search.vue';
+import SearchUrl from './views/SearchUrl.vue';
+import PageNotFound from './views/PageNotFound.vue';
 
 Vue.use(Router);
 
@@ -31,5 +33,11 @@ export default new Router({
       name: 'search',
       component: Search,
     },
+    {
+      path: '/search/url',
+      name: 'search-url',
+      component: SearchUrl,
+    },
+    { path: '*', component: PageNotFound },
   ],
 });

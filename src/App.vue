@@ -4,18 +4,21 @@
   <el-aside width="200px">
     <el-menu :router=true class="app-container">
     <div class="brand">
-      <p> ALETHEIA </p>
+      <img src="../public/favicon.png" class="logo">
     </div>
     <el-menu-item route="/"  index="1">
       <HomeIcon decorative :size="48"/> Home
     </el-menu-item>
     <el-menu-item route="/search" index="2">
-      <SearchIcon decorative :size="48"/> Search
+      <SearchIcon decorative :size="48"/> Search by word
     </el-menu-item>
-    <el-menu-item route="/sources"  index="3-1">
+    <el-menu-item route="/search/url" index="3">
+      <SearchIcon decorative :size="48"/> Search by url
+    </el-menu-item>
+    <el-menu-item route="/sources"  index="4">
       <SourceIcon decorative :size="48"/> Sources
     </el-menu-item>
-    <el-menu-item route="/sources/data"  index="3-1">
+    <el-menu-item route="/sources/data"  index="5">
       <ChartIcon decorative :size="48"/> Sources Data
     </el-menu-item>
     </el-menu>
@@ -57,7 +60,7 @@
   position: relative;
 }
 .logo{
-  width: 80px;
+  width: 100px;
 }
 </style>
 
