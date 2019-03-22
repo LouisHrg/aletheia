@@ -9,9 +9,6 @@
     <el-menu-item route="/"  index="1">
       <HomeIcon decorative :size="48"/>Home <i class="el-icon-arrow-right"></i>
     </el-menu-item>
-    <el-menu-item route="/search" index="2">
-      <SearchIcon decorative :size="96"/> Search by word <i class="el-icon-arrow-right"></i>
-    </el-menu-item>
     <el-menu-item route="/search/url" index="3">
       <SearchIcon decorative :size="48"/> Search by url <i class="el-icon-arrow-right"></i>
     </el-menu-item>
@@ -170,8 +167,9 @@ main {
 .alpha-label{
   position: fixed;
   bottom: 0px;
-  right: 20px;
+  left: 20px;
   color: #b7b7b7;
+  z-index: 10000;
 }
 </style>
 

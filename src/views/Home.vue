@@ -1,5 +1,5 @@
 <template>
-  <div v-loading=isLoading>
+  <div v-loading=isLoading element-loading-background="rgb(242, 243, 250, 0.8)">
     <el-collapse-transition>
       <InfoPane id="info-pane" :item=selectedKeyword v-show="paneOpen" :closeFn=callbackClose />
     </el-collapse-transition>

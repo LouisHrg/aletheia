@@ -1,7 +1,7 @@
 <template>
 <div>
   <h3>Search a word in our database</h3>
-  <el-form ref="form" v-loading=isLoading>
+  <el-form ref="form" v-loading=isLoading element-loading-background="rgb(242, 243, 250, 0.8)">
       <p> Choose a date range </p>
       <el-select v-model="form.range" placeholder="Select" class="let-me-breath">
         <el-option

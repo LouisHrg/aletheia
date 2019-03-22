@@ -88,7 +88,7 @@ export default {
 
   methods: {
     openLink(event) {
-      window.open(event.url, '_blank');
+      window.open(decodeURIComponent(event.url), '_blank');
     },
     fetchArticles() {
       this.isLoading = true;
