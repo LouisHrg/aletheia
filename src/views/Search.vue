@@ -1,6 +1,6 @@
 <template>
 <div>
-  <h1>Search a word in our database</h1>
+  <h3>Search a word in our database</h3>
   <el-form ref="form" v-loading=isLoading>
       <p> Choose a date range </p>
       <el-select v-model="form.range" placeholder="Select" class="let-me-breath">
@@ -29,6 +29,26 @@
   }
   .mt-50 {
     margin-top: 50px;
+  }
+
+  h3 {
+    text-align: left !important;
+  }
+
+  .el-form{
+    background: #fff;
+    border-radius: .6rem !important;
+    padding: 10px 1.8rem !important;
+    font-family: Poppins,sans-serif !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    -webkit-box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+    box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+    margin-bottom:50px;
+  }
+
+  .el-input__inner{
+    border-radius: 15px !important;
   }
 </style>
 
