@@ -1,6 +1,6 @@
 <template>
 <div v-loading=isLoading>
-  <h1>Enter an url to check</h1>
+  <h3>Enter an url to check</h3>
   <el-form ref="form" :model="form">
       <el-input
       @change=clearResults

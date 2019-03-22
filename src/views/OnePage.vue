@@ -1,134 +1,142 @@
 <template>
   <div>
-    <full-page ref="fullpage" :options="options" id="fullpage">
-    <div class="section">
-        <el-container class="app-container">
-          <el-aside width="200px">
-            <img class="logo" src="../../public/favicon.png">
-          </el-aside>
-          <el-container>
-            <el-main>
+    <el-row :gutter="20">
+      <el-col :span="24">
+        <div class="grid-content keyword-div">
+          <el-card class="box-card-white">
+            <div class="grid-content title-name title-card-left title-brand">
+              aletheia
+            </div>
+            <el-row>
+              <el-col class="col" :span="8">
+                <div class="title-category">Adresse</div>
                 <el-row>
-                  <el-col :span="2" ><div class="grid-content"></div></el-col>
-                  <el-col :span="4" class="row-offset-height-head">
-                    <el-card class="box-card">
-                      <div class="grid-content title-name title-card-left title-brand">
-                        aletheia
-                      </div>
-                      <el-row>
-                        <el-col :span="8">
-                          <p class="title-category">
-                            Adresse
-                          </p>
-                          <el-row>
-                            <el-col :span="24" class="space-between">
-                              1234 Street Name City,
-                              AA 99999
-                            </el-col>
-                          </el-row>
-                        </el-col>
-                        <el-col :span="8">
-                          <p class="title-category">
-                            Contact
-                          </p>
-                          <el-row>
-                            <el-col :span="24" class="space-between">
-                              +1 (0) 000 0000 001
-                            </el-col>
-                          </el-row>
-                        </el-col>
-                        <el-col :span="8">
-                          <p class="title-category">
-                            Team
-                          </p>
-                          <el-row>
-                            <el-col :span="12" class="space-between subcategory">
-                              Designer
-                            </el-col>
-                            <el-col :span="12" class="space-between subcategory">
-                              Marketing
-                            </el-col>
-                          </el-row>
-                          <el-row>
-                            <el-col :span="12">
-                              Camille De Wit
-                            </el-col>
-                            <el-col :span="12">
-                              Dorinda Francisco
-                            </el-col>
-                          </el-row>
-                          <el-row>
-                            <el-col :span="24" class="space-category-between subcategory">
-                              Developpeurs
-                            </el-col>
-                          </el-row>
-                          <el-row>
-                            <el-col :span="24" class="space-between-team">
-                              Louis Harang
-                            </el-col>
-                            <el-col :span="24" class="space-between-team">
-                              Valentin Varveropoulos
-                            </el-col>
-                            <el-col :span="24" class="space-between-team">
-                              Jonathan Rakotonirina
-                            </el-col>
-                          </el-row>
-                        </el-col>
-                      </el-row>
-                    </el-card>
+                  <el-col :span="24" class="space-between">
+                    1234 Street Name City,
+                    AA 99999
                   </el-col>
                 </el-row>
-            </el-main>
-          </el-container>
-        </el-container>
-    </div>
-    <div class="section">
-    </div>
-    <div class="section">
-      <el-container class="app-container">
-        <el-aside width="200px">
-          <img class="logo" src="../../public/favicon.png">
-        </el-aside>
-        <el-container>
-          <el-main>
-            <el-row>
-              <el-col :span="2" ><div class="grid-content"></div></el-col>
-              <el-col :span="4" class="row-offset-height">
-                <div class="grid-content title-name">
-                  prices
+              </el-col>
+
+              <el-col :span="8">
+                <div class="col title-category">
+                  Team
                 </div>
+                <el-row>
+                  <el-col :span="12" class="col space-between title-category">
+                    Designer
+                  </el-col>
+                  <el-col :span="12" class="col space-between title-category">
+                    Marketing
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col class="col" :span="12">
+                    Camille De Wit
+                  </el-col>
+                  <el-col class="col" :span="12">
+                    Dorinda Francisco
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col :span="24" class="col space-category-between title-category">
+                    Developpeurs
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col :span="12" class="col space-between-team">
+                    Louis Harang
+                  </el-col>
+                  <el-col :span="12" class="col space-between-team">
+                    Valentin Varveropoulos
+                  </el-col>
+                </el-row>
+                <el-row>
+                  <el-col :span="24" class="col space-between-team">
+                    Jonathan Rakotonirina
+                  </el-col>
+                </el-row>
+              </el-col>
+              <el-col class="col" :span="8">
+                <div class="title-category">Contact</div>
+                <el-row>
+                  <el-col :span="24" class="space-between">
+                    +1 (0) 000 0000 001
+                  </el-col>
+                </el-row>
               </el-col>
             </el-row>
-          </el-main>
-        </el-container>
-      </el-container>
-    </div>
-    <div class="section">
-      <el-container class="app-container">
-        <el-main>
-          <el-row>
-            <el-col :span="6" ><div class="grid-content"></div></el-col>
-            <el-col :span="6" ><div class="grid-content"></div></el-col>
-            <el-col :span="8" class="row-offset-height row-offset-padding-left">
-              <div class="grid-content title-name">
-                Accès
-              </div>
-            </el-col>
-          </el-row>
-        </el-main>
-      </el-container>
-    </div>
-  </full-page>
+          </el-card>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="8">
+        <div class="grid-content keyword-div">
+          <el-card class="box-card">
+            <div>
+              What We Do
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :span="8">
+        <div class="grid-content keyword-div">
+          <el-card class="box-card">
+            <div>
+              Prices
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :span="8">
+        <div class="grid-content keyword-div">
+          <el-card class="box-card">
+            <div>
+              Access
+            </div>
+          </el-card>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <style scoped>
-.app-container{
-  min-height: 100vh;
+
+.box-card{
+  background-image: linear-gradient(45deg,#09C6F9,#045DE9 100%) !important;
+  border-radius: .6rem !important;
+  color:#fff !important;
+  padding: 1.8rem !important;
+  font-family: Poppins,sans-serif !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  font-size:1.5rem;
+}
+
+.box-card-white{
+    background: #fff;
+    border-radius: .6rem !important;
+    padding: 10px 1.8rem !important;
+    font-family: Poppins,sans-serif !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    -webkit-box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+    box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+    margin-bottom:50px;
+}
+
+.col{
+  text-align: center;
 }
 
 .title-brand{
   padding: 20px;
+  background: -webkit-linear-gradient(45deg,#09C6F9,#045DE9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center !important;
 }
 
 .title-name{
@@ -168,32 +176,6 @@
   padding-bottom: 15px;
 }
 
-.logo{
-  position: fixed;
-  top: 20px;
-  left: 20px;
-}
-
-.box-card {
-  width: 1200px;
-  height: 500px;
-}
-
-.row-offset-height{
-  padding-top: 375px;
-}
-
-.row-offset-height-head{
-  padding-top: 200px;
-}
-
-.row-offset-padding-left{
-  padding-left: 170px;
-}
-.grid-content {
-  border-radius: 4px;
-  min-height: 36px;
-}
 </style>
 
 <script>
@@ -210,10 +192,6 @@ export default {
         sectionsColor: ['#FFF', '#6EB63E', '#E5A33B', '#ED6C6D'],
       },
     };
-  },
-
-  created() {
-    this.layout(false);
   },
 };
 </script>

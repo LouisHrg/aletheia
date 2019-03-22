@@ -23,7 +23,7 @@
 </div>
 </template>
 
-<style scoped>
+<style>
   .let-me-breath{
     margin-bottom: 20px;
   }
@@ -45,6 +45,7 @@
     -webkit-box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
     box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
     margin-bottom:50px;
+    text-align: center !important;
   }
 
   .el-input__inner{

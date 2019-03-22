@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .keyword-div{
   margin-bottom: 30px;
 }

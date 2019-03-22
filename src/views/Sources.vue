@@ -1,6 +1,6 @@
 <template>
-  <div>
-      <h1>Sources with Trust Indicators</h1>
+  <div class="box-card-white">
+      <h3>Sources with Trust Indicators</h3>
       <el-table
         v-loading=isLoading
         :v-if=result
@@ -42,6 +42,18 @@
   .app-container{
     min-height: 100vh;
   }
+
+  .box-card-white{
+    background: #fff;
+    border-radius: .6rem !important;
+    padding: 10px 1.8rem !important;
+    font-family: Poppins,sans-serif !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    -webkit-box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+    box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+    margin-bottom:50px;
+}
 </style>
 
 <script>
