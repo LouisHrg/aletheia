@@ -10,7 +10,7 @@
         round>
         Close
       </el-button>
-      <h3 :v-if=item>Top articles for keyword {{ item ? item : 'ya R' }}</h3>
+      <h3 :v-if=item>Top articles</h3>
        <el-table
         :data=result.data
         empty-text="No data"
@@ -21,7 +21,8 @@
           label="Title">
         </el-table-column>
         <el-table-column
-          prop="value"
+          :formatter="displayPertinence"
+          prop="trust"
           label="Pertinence">
         </el-table-column>
       </el-table>
@@ -74,8 +75,12 @@ export default {
         this.isLoading = false;
       });
     },
+    displayPertinence(row) {
+      if (row.trust === 1) {
+        return 'Not enough data';
+      }
+      return row.trust;
+    },
   },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->

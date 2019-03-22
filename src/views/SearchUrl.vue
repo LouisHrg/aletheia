@@ -14,6 +14,7 @@
   <transition name="el-fade-in-linear">
   <el-card v-if=result class="box-card">
       <h3>Results</h3>
+      <p v-if=isEstimation >The content is not in english, the verification cannot be trusted</p>
       <el-row type="flex" class="row-bg" justify="center" :gutter="20">
           <el-col :span="7">
             <div class="grid-content">
@@ -67,6 +68,7 @@ export default {
   name: 'search-url',
   data() {
     return {
+      isEstimation: true,
       result: null,
       errors: [],
       isLoading: false,
@@ -89,6 +91,11 @@ export default {
       this.isLoading = true;
       return axios.get(`http://localhost:8080/api/articles/data?url=${url}`).then((res) => {
         this.result = res.data;
+        if (this.result.lang === 'en') {
+          this.isEstimation = false;
+        } else {
+          this.isEstimation = true;
+        }
         this.isLoading = false;
       });
     },

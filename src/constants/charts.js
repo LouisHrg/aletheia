@@ -120,3 +120,37 @@ export const biasedChart = {
   },
   series: [0],
 };
+export const editionChart = {
+  series: [
+    {
+      data: [0, 0, 0, 0, 0],
+    }],
+  chartOptions: {
+    chart: {
+      height: 350,
+      type: 'bar',
+      id: 'edition-chart',
+      toolbar: {
+        show: false,
+      },
+    },
+    plotOptions: {
+      bar: {
+        columnWidth: '45%',
+        distributed: true,
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+
+    xaxis: {
+      categories: ['0-20', '20-40', '40-60', '60-80', '80-100'],
+      labels: {
+        style: {
+          fontSize: '14px',
+        },
+      },
+    },
+  },
+};

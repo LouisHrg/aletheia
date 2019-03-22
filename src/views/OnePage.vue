@@ -5,7 +5,6 @@
         <img class="logo" src="../../public/favicon.png">
     </div>
     <div class="section">
-      What we do
     </div>
     <div class="section">
       Prices
