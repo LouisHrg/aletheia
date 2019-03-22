@@ -39,9 +39,11 @@
             </ApexChart>
           </el-col>
         </el-row>
+        <h3> Overall score : {{ result.score }}</h3>
+        <ScoreMessage :score=result.score />
         <p class="grey-text" style="float:right">
         The data presented here are experimental.
-        Thanks for taking it into account.
+        Thank you for taking it into account.
       </p>
   </el-card>
   </transition>
@@ -68,10 +70,14 @@
 <script>
 
 import axios from 'axios';
+import ScoreMessage from '@/components/ScoreMessage.vue';
 import { fakenewsChart, biasedChart } from '@/constants/charts';
 
 export default {
   name: 'search-url',
+  components: {
+    ScoreMessage,
+  },
   data() {
     return {
       isEstimation: true,
