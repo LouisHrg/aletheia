@@ -1,5 +1,5 @@
 <template>
-  <div v-loading=isLoading>
+  <div v-loading=isLoading element-loading-background="rgb(242, 243, 250, 0.8)">
     <h1> Countries graph </h1>
       <p> Choose an edition </p>
       <el-select v-model="form.edition" placeholder="Select" class="let-me-breath">
@@ -31,6 +31,7 @@
   }
   .center-el > div{
     margin: 0 auto !important;
+    text-align: center;
   }
 </style>
 

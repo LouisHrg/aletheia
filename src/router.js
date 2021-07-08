@@ -3,7 +3,6 @@ import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Sources from './views/Sources.vue';
 import SourcesGraph from './views/SourcesGraph.vue';
-import Search from './views/Search.vue';
 import SearchUrl from './views/SearchUrl.vue';
 import PageNotFound from './views/PageNotFound.vue';
 import OnePage from './views/OnePage.vue';
@@ -28,11 +27,6 @@ export default new Router({
       path: '/sources',
       name: 'sources',
       component: Sources,
-    },
-    {
-      path: '/search',
-      name: 'search',
-      component: Search,
     },
     {
       path: '/search/url',

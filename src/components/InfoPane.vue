@@ -1,14 +1,15 @@
 <template>
   <div>
-    <el-card class="info-pane" shadow="always" v-loading="isLoading">
+    <div class="info-pane" shadow="always" v-loading="isLoading">
+
       <el-button
         style="float:right"
         type="danger"
         target="info-pane"
         v-on:click=closeFn($event)
         size="mini"
+        icon="el-icon-error"
         round>
-        Close
       </el-button>
       <h3 :v-if=item>Top articles</h3>
        <el-table
@@ -26,11 +27,32 @@
           label="Pertinence">
         </el-table-column>
       </el-table>
-    </el-card>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+
+table.el-table__header{
+  background: #2a41e8 !important;
+  border-radius: 4px 0 0 0px !important;
+}
+
+#info-pane{
+  background: #fff;
+  border-radius: .6rem !important;
+  padding: 10px 1.8rem !important;
+  font-family: Poppins,sans-serif !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  -webkit-box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+  box-shadow: 0 1px 15px 1px rgba(62,57,107,.07) !important;
+  margin-bottom:50px;
+}
+
+h3 {
+  text-align: left !important;
+}
 
 .info-pane{
   width: 100%;
@@ -66,7 +88,7 @@ export default {
 
   methods: {
     openLink(event) {
-      window.open(event.url, '_blank');
+      window.open(decodeURIComponent(event.url), '_blank');
     },
     fetchArticles() {
       this.isLoading = true;

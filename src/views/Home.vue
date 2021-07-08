@@ -1,5 +1,5 @@
 <template>
-  <div v-loading=isLoading>
+  <div v-loading=isLoading element-loading-background="rgb(242, 243, 250, 0.8)">
     <el-collapse-transition>
       <InfoPane id="info-pane" :item=selectedKeyword v-show="paneOpen" :closeFn=callbackClose />
     </el-collapse-transition>
@@ -17,13 +17,30 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .keyword-div{
   margin-bottom: 30px;
 }
 .keyword-div:hover{
   cursor: pointer;
 }
+
+.el-card{
+  background-image: linear-gradient(45deg,#09C6F9,#045DE9 100%) !important;
+  border-radius: .6rem !important;
+  color:#fff !important;
+  padding: 1.8rem !important;
+  font-family: Poppins,sans-serif !important;
+  font-weight: bold !important;
+  text-align: left !important;
+  font-size:1.5rem;
+}
+
+.el-card div{
+    display:inline-block !important;
+}
+
+
 </style>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
-<div v-loading=isLoading>
-  <h1>Enter an url to check</h1>
+<div v-loading=isLoading element-loading-background="rgb(242, 243, 250, 0.8)">
+  <h3>Enter an url to check</h3>
   <el-form ref="form" :model="form">
       <el-input
       @change=clearResults
@@ -14,7 +14,9 @@
   <transition name="el-fade-in-linear">
   <el-card v-if=result class="box-card">
       <h3>Results</h3>
-      <p v-if=isEstimation >The content is not in english, the verification cannot be trusted</p>
+      <p class="grey-text" v-if=isEstimation >
+        The content is not in english, the verification cannot be trusted
+      </p>
       <el-row type="flex" class="row-bg" justify="center" :gutter="20">
           <el-col :span="7">
             <div class="grid-content">
@@ -37,9 +39,11 @@
             </ApexChart>
           </el-col>
         </el-row>
-        <p style="float:right">
+        <h3> Overall score : {{ result.score }}</h3>
+        <ScoreMessage :score=result.score />
+        <p class="grey-text" style="float:right">
         The data presented here are experimental.
-        Thanks for taking it into account.
+        Thank you for taking it into account.
       </p>
   </el-card>
   </transition>
@@ -49,6 +53,7 @@
 
 <style scoped>
   .let-me-breath{
+    margin-top: 20px;
     margin-bottom: 20px;
   }
   .mt-50 {
@@ -57,15 +62,22 @@
   .center-el > div{
     margin: 0 auto !important;
   }
+  .grey-text{
+    color: #b7b7b7;
+  }
 </style>
 
 <script>
 
 import axios from 'axios';
+import ScoreMessage from '@/components/ScoreMessage.vue';
 import { fakenewsChart, biasedChart } from '@/constants/charts';
 
 export default {
   name: 'search-url',
+  components: {
+    ScoreMessage,
+  },
   data() {
     return {
       isEstimation: true,
